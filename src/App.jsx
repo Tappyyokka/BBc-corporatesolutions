@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
+import { X } from "lucide-react";
 import {
   FaArrowRight,
   FaBars,
@@ -12,69 +13,48 @@ FaMapMarkerAlt,
   FaTimes,
 } from "react-icons/fa";
 import "./App.css";
+import CategoryPage from "./CategoryPage";
 
 const services = [
   {
     number: "01",
     title: "Financial Services",
-    description:
-      "Financial solutions and loan assistance to help individuals and businesses move forward.",
-    items: [
-      "Home Loan Assistance",
-      "Business Loan Assistance",
-      "Personal Loan Assistance",
-      "Loan Against Property",
-    ],
+    description: "Financial service options for individuals and businesses.",
+    items: ["Customer Registration", "Housing Loan", "Property Loan", "Personal Loan"],
+    slug: "financial",
   },
   {
     number: "02",
     title: "Legal Services",
-    description:
-      "Professional assistance for registrations, documentation, and business compliance.",
-    items: [
-      "Company Registration",
-      "GST Registration",
-      "FSSAI Registration",
-      "Legal Documentation",
-    ],
+    description: "Registration, documentation, and compliance service options.",
+    items: ["GST Registration", "GST Filing Packages", "FSSAI", "Company Registration"],
+    slug: "legal",
   },
   {
     number: "03",
     title: "Media & Branding",
-    description:
-      "Promote your brand and connect with the right audience through media and publishing.",
-    items: [
-      "Business Promotion",
-      "Media Publishing",
-      "Branding Solutions",
-      "Business Magazine Publishing",
-    ],
+    description: "Promotional media and business support packages from Jaytrade Times.",
+    items: ["Grow Up Package", "Standard Package", "Premium Package", "Corporate Package"],
+    slug: "media-and-branding",
   },
   {
     number: "04",
-    title: "Jobs & Career",
-    description:
-      "Career guidance, recruitment, and placement assistance for job seekers and employers.",
-    items: [
-      "Job Consultancy",
-      "Recruitment Services",
-      "Job Placement Assistance",
-      "Career Guidance",
-    ],
+    title: "Jaytrade Jobs",
+    description: "Explore the registration services listed under Jaytrade Jobs.",
+    items: ["Udyog Registration", "Basic Registration", "Udyog Plus", "Corporate Plus"],
+    slug: "jaytrade-jobs",
   },
   {
     number: "05",
     title: "Business Development",
-    description:
-      "Business development and corporate advisory solutions to help your business grow.",
-    items: [
-      "Franchise Consulting",
-      "Business Plan Preparation",
-      "Startup Support",
-      "Business Growth Consulting",
-    ],
+    description: "Business development and digital banking service options.",
+    items: ["Business Associate", "Franchise", "AEPS System", "Micro ATM"],
+    slug: "business-development",
   },
 ];
+
+const getCurrentRoute = () =>
+  window.location.hash.replace(/^#\/?/, "").split("?")[0] || "home";
 
 function Reveal({
   children,
@@ -200,13 +180,13 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <motion.a
-            href="#services"
-            className="button button-gold"
-            whileHover={reduceMotion ? {} : { scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            Explore Our Services <FaArrowRight />
-          </motion.a>
+  href="#services"
+  className="button button-gold"
+  whileHover={reduceMotion ? {} : { scale: 1.04 }}
+  whileTap={{ scale: 0.97 }}
+>
+  Explore Services <FaArrowRight />
+</motion.a>
 
           <motion.a
             href="#about"
@@ -356,12 +336,12 @@ function Services() {
             </ul>
 
             <a
-              href="#contact"
-              className="service-link"
-              aria-label={`Enquire about ${service.title}`}
-            >
-              Explore services <FaArrowRight />
-            </a>
+  href={`#/${service.slug}`}
+  className="service-link"
+  aria-label={`Explore ${service.title}`}
+>
+  Explore services <FaArrowRight />
+</a>
           </motion.article>
         ))}
       </div>
@@ -558,18 +538,88 @@ function Footer() {
   );
 }
 
-export default function App() {
+
+function ApplicationPage() {
+  const jotformContainer = useRef(null);
+
+  useEffect(() => {
+    const container = jotformContainer.current;
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    const script = document.createElement("script");
+    script.src = "https://form.jotform.com/jsform/263241344771051";
+    script.type = "text/javascript";
+    container.appendChild(script);
+
+    return () => {
+      container.innerHTML = "";
+    };
+  }, []);
+
+  return (
+    <main className="application-page">
+      <div className="application-heading">
+        <div className="section-label">GET STARTED</div>
+        <h1>Submit an Enquiry</h1>
+        <p>
+          Tell us what you’re looking for. Our team will get in touch with you.
+        </p>
+      </div>
+
+      <div className="jotform-wrapper">
+        <div ref={jotformContainer} />
+      </div>
+    </main>
+  );
+}
+
+function App() {
+  const [currentRoute, setCurrentRoute] = useState(getCurrentRoute());
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setCurrentRoute(getCurrentRoute());
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
   return (
     <>
       <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <WhyChooseUs />
-        <Contact />
-      </main>
+
+      {currentRoute === "application" ? (
+  <ApplicationPage />
+) : [
+    "financial",
+    "legal",
+    "gst-filing",
+    "business-development",
+    "jaytrade-jobs",
+    "media-and-branding",
+  ].includes(currentRoute) ? (
+  <CategoryPage
+    slug={currentRoute}
+    onBack={() => {
+      window.location.hash = "#services";
+    }}
+  />
+) : (
+  <main>
+    <Hero />
+    <About />
+    <Services />
+    <WhyChooseUs />
+    <Contact />
+  </main>
+)}
+
       <Footer />
     </>
   );
 }
+
+export default App;

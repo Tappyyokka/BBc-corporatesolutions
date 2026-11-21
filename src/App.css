@@ -1186,3 +1186,56 @@ button:focus-visible {
     align-self: flex-end;
   }
 }
+
+.application-page {
+  min-height: 70vh;
+  padding: 80px 7%;
+  background: #000;
+}
+
+.application-page {
+  min-height: 70vh;
+  padding: 100px 6% 80px;
+  background: var(--background, #f7f7f7);
+}
+
+.application-heading {
+  max-width: 760px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.application-heading h1 {
+  margin: 12px 0;
+}
+
+.application-heading p {
+  margin: 0;
+}
+
+.jotform-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.jotform-wrapper iframe {
+  display: block;
+  width: 100%;
+  min-height: 900px;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .application-page {
+    padding: 64px 5% 48px;
+  }
+
+  .jotform-wrapper iframe {
+    min-height: 1100px;
+  }
+}

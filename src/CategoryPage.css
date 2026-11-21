@@ -1,0 +1,632 @@
+.category-page {
+  min-height: 75vh;
+  padding: 42px 6% 90px;
+  background: #080808;
+  color: #f7f3eb;
+}
+
+.category-container {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.category-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 30px;
+  padding: 10px 0;
+  border: 0;
+  background: transparent;
+  color: #d7b56d;
+  font: inherit;
+  cursor: pointer;
+}
+
+.category-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(32px, 6vw, 76px);
+  border: 1px solid rgba(215, 181, 109, 0.24);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(215, 181, 109, 0.13), transparent 34%),
+    linear-gradient(135deg, #17130d, #090909 65%);
+}
+
+.category-eyebrow,
+.category-section-heading > span,
+.category-bottom-banner > div > span {
+  color: #d7b56d;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.category-number {
+  position: absolute;
+  top: 18px;
+  right: 32px;
+  color: rgba(215, 181, 109, 0.12);
+  font-size: clamp(5rem, 15vw, 11rem);
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.category-hero h1 {
+  position: relative;
+  max-width: 760px;
+  margin: 22px 0 16px;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  line-height: 1.04;
+}
+
+.category-hero p {
+  position: relative;
+  max-width: 620px;
+  color: #bdb7ac;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.category-hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 13px 20px;
+  border: 1px solid #d7b56d;
+  border-radius: 999px;
+  background: #d7b56d;
+  color: #111;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.category-hero-button:hover {
+  transform: translateY(-2px);
+  background: #e6c985;
+}
+
+.category-list-section {
+  padding: 70px 0 20px;
+}
+
+.category-section-heading {
+  margin-bottom: 24px;
+}
+
+.category-section-heading h2 {
+  margin: 10px 0 0;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.category-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.category-service-card {
+  display: flex;
+  min-height: 190px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  border: 1px solid rgba(215, 181, 109, 0.18);
+  border-radius: 16px;
+  background: #11100e;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.category-service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(215, 181, 109, 0.65);
+}
+
+.category-service-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(215, 181, 109, 0.12);
+  color: #d7b56d;
+}
+
+.category-service-card h3 {
+  margin: 20px 0 24px;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.category-enquire-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  color: #d7b56d;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.category-enquire-link:hover {
+  color: #f0d99f;
+}
+
+.category-group {
+  margin-top: 60px;
+}
+
+.category-bottom-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: 70px;
+  padding: clamp(26px, 5vw, 48px);
+  border: 1px solid rgba(215, 181, 109, 0.22);
+  border-radius: 20px;
+  background: #15120c;
+}
+
+.category-bottom-banner h2 {
+  margin: 12px 0;
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+}
+
+.category-bottom-banner p {
+  margin: 0;
+  color: #bdb7ac;
+  line-height: 1.7;
+}
+
+.category-bottom-banner .category-hero-button {
+  flex-shrink: 0;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .category-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .category-page {
+    padding: 26px 5% 60px;
+  }
+
+  .category-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-bottom-banner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .category-number {
+    top: 24px;
+    right: 18px;
+  }
+}
+
+/* Media & Branding package cards */
+.category-page .category-service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  background: linear-gradient(145deg, #111c35, #0a1224);
+  color: #f8fafc;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.category-page .category-service-card:hover {
+  transform: translateY(-5px);
+  border-color: #f59e0b;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.25);
+}
+
+.category-page .category-service-card h3 {
+  margin: 16px 0 10px;
+  color: #fff;
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+
+.category-page .category-service-card p {
+  color: #cbd5e1;
+  line-height: 1.65;
+}
+
+.category-page .category-service-card p strong {
+  display: block;
+  margin: 8px 0 4px;
+  color: #fbbf24;
+  font-size: 1.4rem;
+}
+
+.category-page .category-service-card h4 {
+  margin: 18px 0 10px;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.category-page .category-service-card ul {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.category-page .category-service-card li {
+  position: relative;
+  padding-left: 25px;
+  color: #dbe4f0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.category-page .category-service-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+.category-page .category-service-card .category-enquire-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: auto;
+  padding: 13px 18px;
+  border: 1px solid #f59e0b;
+  border-radius: 10px;
+  background: #f59e0b;
+  color: #111827;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.category-page .category-service-card .category-enquire-link:hover {
+  background: transparent;
+  color: #fbbf24;
+}
+
+@media (max-width: 600px) {
+  .category-page .category-service-card {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .category-page .category-service-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .category-page .category-service-card p strong {
+    font-size: 1.25rem;
+  }
+}
+
+/* =========================================
+   BUSINESS DEVELOPMENT + JOBS PACKAGE CARDS
+   ========================================= */
+
+.category-page .category-service-grid {
+  align-items: stretch;
+  gap: 22px;
+}
+
+.category-page .category-service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+  height: 100%;
+  padding: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(215, 181, 109, 0.2);
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(215, 181, 109, 0.1),
+      transparent 35%
+    ),
+    linear-gradient(145deg, #17140f, #0c0c0c 72%);
+  color: #f7f3eb;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.category-page .category-service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(215, 181, 109, 0.7);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.32);
+}
+
+/* Featured packages */
+.category-page .category-service-card.category-package-featured {
+  border-color: rgba(215, 181, 109, 0.65);
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(215, 181, 109, 0.18),
+      transparent 38%
+    ),
+    linear-gradient(145deg, #211b10, #0d0c0a 72%);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.28);
+}
+
+.category-page .category-package-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  margin-bottom: 18px;
+  padding: 7px 12px;
+  border: 1px solid rgba(215, 181, 109, 0.45);
+  border-radius: 999px;
+  background: rgba(215, 181, 109, 0.12);
+  color: #e8c879;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Package title and description */
+.category-page .category-service-card h3 {
+  margin: 0 0 12px;
+  color: #fffaf0;
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.category-page .category-package-description {
+  margin: 0 0 22px;
+  color: #bdb7ac;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Profit-sharing percentage — Business Development */
+.category-page .category-package-percentage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  margin: 0 0 24px;
+  padding: 18px 20px;
+  border: 1px solid rgba(215, 181, 109, 0.18);
+  border-radius: 14px;
+  background: rgba(215, 181, 109, 0.07);
+}
+
+.category-page .category-package-percentage span,
+.category-page .category-package-percentage small {
+  color: #c4b58f;
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+}
+
+.category-page .category-package-percentage strong {
+  color: #e8c879;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.category-page .category-package-percentage small {
+  margin-top: 3px;
+}
+
+/* Feature list */
+.category-page .category-package-feature-heading {
+  margin: 0 0 14px;
+  color: #f0e5cc;
+  font-size: 0.82rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.category-page .category-package-features {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 26px;
+  padding: 0;
+  list-style: none;
+}
+
+.category-page .category-package-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #d0c9bc;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.category-page .category-package-features li svg {
+  flex: 0 0 17px;
+  margin-top: 3px;
+  color: #d7b56d;
+}
+
+/* Package enquiry link */
+.category-page .category-service-card .category-enquire-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: auto;
+  padding: 14px 18px;
+  border: 1px solid #d7b56d;
+  border-radius: 12px;
+  background: #d7b56d;
+  color: #111;
+  font-size: 0.92rem;
+  font-weight: 750;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.category-page .category-service-card .category-enquire-link:hover {
+  transform: translateY(-2px);
+  background: transparent;
+  color: #e8c879;
+}
+
+/* =========================================
+   JOBS — INDUSTRIES GRID
+   ========================================= */
+
+.category-page .category-industries-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 58px;
+}
+
+.category-page .category-industry-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  min-height: 68px;
+  padding: 16px;
+  border: 1px solid rgba(215, 181, 109, 0.16);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #15130f, #0d0d0d);
+  color: #e9e2d5;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.category-page .category-industry-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(215, 181, 109, 0.55);
+  background: #19150d;
+}
+
+.category-page .category-industry-card svg {
+  flex: 0 0 18px;
+  color: #d7b56d;
+}
+
+.category-page .category-industry-card strong {
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Space between Candidate and Employer sections */
+.category-page .category-section-heading {
+  margin: 0 0 26px;
+}
+
+.category-page .category-section-heading h2 {
+  margin: 10px 0;
+  color: #fffaf0;
+}
+
+.category-page .category-section-heading p {
+  max-width: 650px;
+  margin: 10px 0 0;
+  color: #bdb7ac;
+  line-height: 1.7;
+}
+
+.category-page .category-service-grid + .category-section-heading {
+  margin-top: 64px;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .category-page .category-industries-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .category-page .category-service-card {
+    padding: 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .category-page .category-service-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .category-page .category-service-card {
+    padding: 22px;
+    border-radius: 17px;
+  }
+
+  .category-page .category-package-percentage {
+    padding: 16px;
+  }
+
+  .category-page .category-industries-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 44px;
+  }
+
+  .category-page .category-industry-card {
+    min-height: 62px;
+    padding: 12px;
+  }
+
+  .category-page .category-industry-card strong {
+    font-size: 0.82rem;
+  }
+
+  .category-page .category-service-grid + .category-section-heading {
+    margin-top: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-page .category-service-card,
+  .category-page .category-industry-card,
+  .category-page .category-service-card .category-enquire-link {
+    transition: none;
+  }
+
+  .category-page .category-service-card:hover,
+  .category-page .category-industry-card:hover,
+  .category-page .category-service-card .category-enquire-link:hover {
+    transform: none;
+  }
+}
