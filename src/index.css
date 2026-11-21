@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --navy: #08172d;
-  --navy-card: #0e2039;
-  --navy-light: #122b4b;
+  --navy: #000000;
+  --navy-card: #000000;
+  --navy-light: #000000;
+
   --gold: #e5bd65;
   --gold-light: #f0ce7b;
   --muted: #aebed3;
@@ -43,4 +44,8 @@ button {
 ::selection {
   background: var(--gold);
   color: var(--navy);
+}
+section,
+footer {
+  background-color: #000 !important;
 }
