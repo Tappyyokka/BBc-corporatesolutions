@@ -307,28 +307,34 @@ export default function CategoryPage({ slug, onBack }) {
   
 
   const renderServices = (services) => (
-    <div className="category-service-grid">
-      {services.map((service) => (
-        <article className="category-service-card" key={service}>
-          <span className="category-service-icon">
-            <CheckCircle2 size={20} />
-          </span>
+  <div
+    className={`category-service-grid ${
+      ["financial", "legal"].includes(category.slug)
+        ? "category-service-list"
+        : ""
+    }`}
+  >
+    {services.map((service, index) => (
+      <article className="category-service-card" key={service}>
+        <span className="category-service-number">
+          {String(index + 1).padStart(2, "0")}
+        </span>
 
-          <h3>{service}</h3>
+        <h3>{service}</h3>
 
-          <a
-            href={`#/application?category=${category.slug}&service=${encodeURIComponent(
-              service
-            )}`}
-            className="category-enquire-link"
-          >
-            Enquire about this service
-            <ArrowRight size={16} />
-          </a>
-        </article>
-      ))}
-    </div>
-  );
+        <a
+          href={`#/application?category=${category.slug}&service=${encodeURIComponent(
+            service
+          )}`}
+          className="category-enquire-link"
+          aria-label={`Enquire about ${service}`}
+        >
+          <ArrowRight size={20} />
+        </a>
+      </article>
+    ))}
+  </div>
+);
 
   const renderPackageCards = (packages, type = "package") => (
   <div className="category-service-grid">
