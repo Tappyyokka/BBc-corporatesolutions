@@ -460,7 +460,7 @@ function Footer() {
           <div className="footer-contact-grid">
 
             <a
-              href="mailto:communication@jaytrade.in"
+              href="mailto:bbccorporatessolutions@gmail.com"
               className="footer-contact-item"
             >
               <span className="footer-contact-icon">
@@ -469,7 +469,7 @@ function Footer() {
 
               <span>
                 <small>Email us</small>
-                <strong>communication@jaytrade.in</strong>
+                <strong>bbccorporatessolutions@gmail.com</strong>
               </span>
 
               <FaArrowRight className="footer-contact-arrow" />
