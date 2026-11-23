@@ -402,7 +402,7 @@ function Contact() {
           </p>
         </div>
 
-        <a href="#contact" className="button button-gold">
+        <a href="#/application" className="button button-gold">
           Submit an Enquiry <FaArrowRight />
         </a>
       </div>
