@@ -460,7 +460,7 @@ function Footer() {
           <div className="footer-contact-grid">
 
             <a
-              href="mailto:your-email@example.com"
+              href="mailto:communication@jaytrade.in"
               className="footer-contact-item"
             >
               <span className="footer-contact-icon">
@@ -469,14 +469,14 @@ function Footer() {
 
               <span>
                 <small>Email us</small>
-                <strong>your-email@example.com</strong>
+                <strong>communication@jaytrade.in</strong>
               </span>
 
               <FaArrowRight className="footer-contact-arrow" />
             </a>
 
             <a
-              href="tel:+910000000000"
+              href="tel:+919656745269"
               className="footer-contact-item"
             >
               <span className="footer-contact-icon">
@@ -485,14 +485,14 @@ function Footer() {
 
               <span>
                 <small>Call us</small>
-                <strong>+91 00000 00000</strong>
+                <strong>+91 96567 45269 | 0495 2762250</strong>
               </span>
 
               <FaArrowRight className="footer-contact-arrow" />
             </a>
 
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Kozhikode+Kerala"
+              href="https://maps.app.goo.gl/NHxWsjhpEXfG4QbC9"
               target="_blank"
               rel="noreferrer"
               className="footer-contact-item"
@@ -503,7 +503,7 @@ function Footer() {
 
               <span>
                 <small>Our location</small>
-                <strong>Your Office Address, India</strong>
+                <strong>Jay Trade Group of Companies, 1st Floor Marina Residency, YMCA Cross Road, Kozhikode, Kerala</strong>
               </span>
 
               <FaArrowRight className="footer-contact-arrow" />
